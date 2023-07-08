@@ -152,7 +152,10 @@ class _GameBoardState extends State<GameBoard> {
       // check if the piece is out of bounds (either too low or too far to the left or right)
       if (row >= colLength || col < 0 || col >= rowLength) {
         return true;
-      }
+      } 
+      else if (col > 0 && row > 0 && gameBoard[row][col] != null) {
+        return true;
+      } 
     }
 
     // if no collisions are detected, return false
@@ -193,6 +196,10 @@ class _GameBoardState extends State<GameBoard> {
     but if there is already a piece in the top level when the new piece is created,
     then game is over
     */
+
+    if(isGameOver()) {
+      gameOver = true;
+    }
   }
 
   // move left
@@ -317,7 +324,7 @@ class _GameBoardState extends State<GameBoard> {
             // SCORE
             Text(
               'Score: $currentScore',
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             ),
 
             // GAME CONTROLS
@@ -330,20 +337,20 @@ class _GameBoardState extends State<GameBoard> {
                   IconButton(
                     onPressed: moveLeft,
                     color: Colors.white,
-                    icon: Icon(Icons.arrow_back_ios),
+                    icon: const Icon(Icons.arrow_back_ios),
                   ),
 
                   // rotate
                   IconButton(
                       onPressed: rotatePiece,
                       color: Colors.white,
-                      icon: Icon(Icons.rotate_right)),
+                      icon: const Icon(Icons.rotate_right)),
 
                   // right
                   IconButton(
                       onPressed: moveRight,
                       color: Colors.white,
-                      icon: Icon(Icons.arrow_forward_ios)),
+                      icon: const Icon(Icons.arrow_forward_ios)),
                 ],
               ),
             )

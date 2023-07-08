@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) => MaterialApp(
+  Widget build(BuildContext context) => const MaterialApp(
         // theme: ThemeData(brightness: Brightness.dark).copyWith(
         //   scaffoldBackgroundColor: Colors.black,
         //   dividerColor: const Color(0xFF2F2F2F),

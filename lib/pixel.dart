@@ -8,9 +8,10 @@ import 'package:flutter/material.dart';
 // import 'package:tetris/vector.dart';
 
 class Pixel extends StatelessWidget {
-  var color;
+  // ignore: prefer_typing_uninitialized_variables
+  final color;
   // var child;
-  Pixel({
+  const Pixel({
     super.key,
     required this.color,
     // required this.child,
